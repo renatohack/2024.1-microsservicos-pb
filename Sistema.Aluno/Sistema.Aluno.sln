@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Domain", "Sistema.Aluno.Domain\Sistema.Aluno.Domain.csproj", "{7D2A63BF-9F1F-45E0-AA26-303E9D32E7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.Domain", "Sistema.Aluno.Domain\Sistema.Aluno.Domain.csproj", "{7D2A63BF-9F1F-45E0-AA26-303E9D32E7DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Repository", "Sistema.Aluno.Repository\Sistema.Aluno.Repository.csproj", "{F08BB11D-59BF-4AFC-AD93-5E7827270626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Service", "Sistema.Aluno.Service\Sistema.Aluno.Service.csproj", "{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.API", "Sistema.Aluno.API\Sistema.Aluno.API.csproj", "{0941F274-D0BF-4B41-A51E-19461353997D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{7D2A63BF-9F1F-45E0-AA26-303E9D32E7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D2A63BF-9F1F-45E0-AA26-303E9D32E7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D2A63BF-9F1F-45E0-AA26-303E9D32E7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08BB11D-59BF-4AFC-AD93-5E7827270626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08BB11D-59BF-4AFC-AD93-5E7827270626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08BB11D-59BF-4AFC-AD93-5E7827270626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08BB11D-59BF-4AFC-AD93-5E7827270626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0941F274-D0BF-4B41-A51E-19461353997D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0941F274-D0BF-4B41-A51E-19461353997D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0941F274-D0BF-4B41-A51E-19461353997D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0941F274-D0BF-4B41-A51E-19461353997D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
