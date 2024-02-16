@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sistema.Aluno.Domain.Aggregates
 {
-    internal class Disciplina
+    public class Disciplina
     {
+        public Guid Id { get; set; }
+        public string Nome { get; set; }
+        public List<Turma> Turmas { get; set; }
+
     }
 }
