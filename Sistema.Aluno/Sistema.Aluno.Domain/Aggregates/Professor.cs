@@ -1,11 +1,10 @@
-﻿using Sistema.Aluno.Domain.Aggregates;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema.Secretaria.Domain
+namespace Sistema.Aluno.Domain.Aggregates
 {
     public class Professor
     {

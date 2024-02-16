@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.Domain", "Sistema.Aluno.Domain\Sistema.Aluno.Domain.csproj", "{7D2A63BF-9F1F-45E0-AA26-303E9D32E7DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Repository", "Sistema.Aluno.Repository\Sistema.Aluno.Repository.csproj", "{F08BB11D-59BF-4AFC-AD93-5E7827270626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.Repository", "Sistema.Aluno.Repository\Sistema.Aluno.Repository.csproj", "{F08BB11D-59BF-4AFC-AD93-5E7827270626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Service", "Sistema.Aluno.Service\Sistema.Aluno.Service.csproj", "{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.Service", "Sistema.Aluno.Service\Sistema.Aluno.Service.csproj", "{ED588FC8-1547-4273-A5D9-FC9CEFCECEDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.API", "Sistema.Aluno.API\Sistema.Aluno.API.csproj", "{0941F274-D0BF-4B41-A51E-19461353997D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.API", "Sistema.Aluno.API\Sistema.Aluno.API.csproj", "{0941F274-D0BF-4B41-A51E-19461353997D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Test", "Sistema.Aluno.Test\Sistema.Aluno.Test.csproj", "{4181BD48-6F8D-4146-AB16-0F435082E8D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0941F274-D0BF-4B41-A51E-19461353997D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0941F274-D0BF-4B41-A51E-19461353997D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0941F274-D0BF-4B41-A51E-19461353997D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4181BD48-6F8D-4146-AB16-0F435082E8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4181BD48-6F8D-4146-AB16-0F435082E8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4181BD48-6F8D-4146-AB16-0F435082E8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4181BD48-6F8D-4146-AB16-0F435082E8D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
