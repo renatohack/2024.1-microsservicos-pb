@@ -29,7 +29,7 @@ namespace Sistema.Aluno.Domain.Aggregates
             return aluno;
         }
 
-        public void RealizarInscricao(Turma turma)
+        public Inscricao RealizarInscricao(Turma turma)
         {
             Inscricao inscricao = new Inscricao()
             {
@@ -39,6 +39,8 @@ namespace Sistema.Aluno.Domain.Aggregates
 
             this.Inscricoes.Add(inscricao);
             turma.Inscricoes.Add(inscricao);
+
+            return inscricao;
         }
 
         public void CancelarInscricao(Guid idInscricao)
@@ -76,8 +78,6 @@ namespace Sistema.Aluno.Domain.Aggregates
 
             inscricao.Presenca = presenca;
         }
-
-
 
     }
 }
