@@ -69,6 +69,40 @@ namespace Sistema.Aluno.Test.Domain
 
 
         [Fact]
+        public void DeveConsultarHistoricoComSucesso()
+        {
+            domain.Aluno aluno = new domain.Aluno()
+            {
+                Nome = "Jorge",
+                Matricula = "1"
+            };
+
+            domain.Professor professor = new domain.Professor()
+            {
+                Matricula = "1",
+            };
+
+            domain.Disciplina disciplina = new domain.Disciplina()
+            {
+                Nome = "Fisica",
+            };
+
+            domain.Turma turma = new domain.Turma()
+            {
+                Disciplina = disciplina,
+                Professor = professor,
+            };
+
+
+            domain.Inscricao inscricao = aluno.RealizarInscricao(turma);
+
+            Assert.True(aluno.Inscricoes.Count() == 1);
+            Assert.True(aluno.Inscricoes[0].Turma.Disciplina.Nome == "Fisica");
+
+        }
+
+
+        [Fact]
         public void DeveCancelarInscricaoComSucesso()
         {
             domain.Aluno aluno = new domain.Aluno()
