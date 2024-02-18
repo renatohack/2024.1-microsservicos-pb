@@ -12,7 +12,6 @@ namespace Sistema.Aluno.Domain.Aggregates
         public bool Ativa { get; set; } = true;
         public Turma Turma { get; set; }
         public Aluno Aluno { get; set; }
-        private float Frequencia { get; set; } = 0;
         public int Presenca { get; set; } = 0;
         public float NotaP1 { get; set; } = 0;
         public float NotaP2 { get; set; } = 0;
@@ -33,7 +32,7 @@ namespace Sistema.Aluno.Domain.Aggregates
 
         public float ObterFrequencia()
         {
-            return this.Presenca / this.Turma.NumeroAulas;
+            return (float) this.Presenca / this.Turma.NumeroAulas;
         }
 
 

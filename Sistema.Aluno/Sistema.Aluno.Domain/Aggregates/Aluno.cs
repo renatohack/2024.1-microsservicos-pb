@@ -72,7 +72,7 @@ namespace Sistema.Aluno.Domain.Aggregates
             inscricao.NotaPF = notapf;
         }
 
-        public void AlterarFrequenciaEmDisciplina(Guid idInscricao, int presenca)
+        public void AlterarPresencaEmDisciplina(Guid idInscricao, int presenca)
         {
             Inscricao inscricao = this.Inscricoes.FirstOrDefault(inscricao => inscricao.Id == idInscricao);
 
