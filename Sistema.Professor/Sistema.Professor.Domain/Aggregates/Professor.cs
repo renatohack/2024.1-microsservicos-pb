@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema.Aluno.Domain.Aggregates
+namespace Sistema.Professor.Domain.Aggregates
 {
     public class Professor
     {
