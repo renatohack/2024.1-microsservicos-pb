@@ -14,20 +14,19 @@ namespace Sistema.Aluno.Domain.Aggregates
         public string Nome { get; set; }
         public string Matricula { get; set; }
         public List<Inscricao> Inscricoes { get; set; } = new List<Inscricao>();
-
-       
+               
 
         // public methods
         public void RealizarInscricao(Turma turma)
         {
             Inscricao inscricao = new Inscricao()
             {
-                Turma = turma,
                 Aluno = this,
+                Turma = turma,
             };
 
             this.Inscricoes.Add(inscricao);
-            turma.Inscricoes.Add(inscricao);
+            turma.AdicionarInscricao(inscricao);
         }
 
         public void CancelarInscricao(Guid idInscricao)
