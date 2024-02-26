@@ -8,8 +8,8 @@ namespace Sistema.Aluno.Domain.Aggregates
 {
     public class Professor
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public string Matricula { get; set; }
-        public List<Turma> Turmas { get; set; }
+        public Guid Id { get; init; }
+        public string Matricula { get; init; }
+        public List<Turma> Turmas { get; init; }
     }
 }

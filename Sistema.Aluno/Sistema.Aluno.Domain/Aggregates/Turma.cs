@@ -8,10 +8,10 @@ namespace Sistema.Aluno.Domain.Aggregates
 {
     public class Turma
     {
-        public Guid Id { get; } = Guid.NewGuid();
-        public Professor Professor { get; set; }
-        public Disciplina Disciplina { get; set; }
-        public List<Inscricao> Inscricoes { get; set; } = new List<Inscricao>();
+        public Guid Id { get; init; }
+        public Professor Professor { get; init; }
+        public Disciplina Disciplina { get; init; }
+        public List<Inscricao> Inscricoes { get; init; } = new List<Inscricao>();
 
 
         public void AdicionarInscricao(Inscricao inscricao)

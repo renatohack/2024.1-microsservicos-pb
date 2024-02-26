@@ -10,10 +10,10 @@ namespace Sistema.Aluno.Domain.Aggregates
     {
 
         // properties
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; init; }
         public string Nome { get; set; }
         public string Matricula { get; set; }
-        public List<Inscricao> Inscricoes { get; set; } = new List<Inscricao>();
+        public List<Inscricao> Inscricoes { get; init; } = new List<Inscricao>();
                
 
         // public methods

@@ -16,22 +16,26 @@ namespace Sistema.Aluno.Test.Domain
         {
             domain.Aluno aluno = new domain.Aluno()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Jorge",
                 Matricula = "1"
             };
 
             domain.Professor professor = new domain.Professor()
             {
+                Id = Guid.NewGuid(),
                 Matricula = "1",
             };
 
             domain.Disciplina disciplina = new domain.Disciplina()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Fisica",
             };
 
             domain.Turma turma = new domain.Turma()
             {
+                Id = Guid.NewGuid(),
                 Disciplina = disciplina,
                 Professor = professor,
             };
@@ -54,22 +58,26 @@ namespace Sistema.Aluno.Test.Domain
         {
             domain.Aluno aluno = new domain.Aluno()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Jorge",
                 Matricula = "1"
             };
 
             domain.Professor professor = new domain.Professor()
             {
+                Id = Guid.NewGuid(),
                 Matricula = "1",
             };
 
             domain.Disciplina disciplina = new domain.Disciplina()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Fisica",
             };
 
             domain.Turma turma = new domain.Turma()
             {
+                Id = Guid.NewGuid(),
                 Disciplina = disciplina,
                 Professor = professor,
             };
@@ -89,37 +97,38 @@ namespace Sistema.Aluno.Test.Domain
         {
             domain.Aluno aluno = new domain.Aluno()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Jorge",
                 Matricula = "1"
             };
 
             domain.Professor professor = new domain.Professor()
             {
+                Id = Guid.NewGuid(),
                 Matricula = "1",
             };
 
             domain.Disciplina disciplina = new domain.Disciplina()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Fisica",
             };
 
             domain.Turma turma = new domain.Turma()
             {
+                Id = Guid.NewGuid(),
                 Disciplina = disciplina,
                 Professor = professor,
             };
 
             aluno.RealizarInscricao(turma);
             Inscricao inscricao = aluno.Inscricoes[0];
-            inscricao.NotaP1 = 1;
-            inscricao.NotaP2 = 2;
-            inscricao.NotaPF = 3;
 
             List<float> listaNotas = aluno.ConsultarNotasDeDisciplina(inscricao.Id);
 
-            Assert.True(listaNotas[0] == 1);
-            Assert.True(listaNotas[1] == 2);
-            Assert.True(listaNotas[2] == 3);
+            Assert.True(listaNotas[0] == 0);
+            Assert.True(listaNotas[1] == 0);
+            Assert.True(listaNotas[2] == 0);
         }
 
 
@@ -128,34 +137,37 @@ namespace Sistema.Aluno.Test.Domain
         {
             domain.Aluno aluno = new domain.Aluno()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Jorge",
                 Matricula = "1"
             };
 
             domain.Professor professor = new domain.Professor()
             {
+                Id = Guid.NewGuid(),
                 Matricula = "1",
             };
 
             domain.Disciplina disciplina = new domain.Disciplina()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Fisica",
                 NumeroAulas = 10,
             };
 
             domain.Turma turma = new domain.Turma()
             {
+                Id = Guid.NewGuid(),
                 Disciplina = disciplina,
                 Professor = professor,
             };
 
             aluno.RealizarInscricao(turma);
             Inscricao inscricao = aluno.Inscricoes[0];
-            inscricao.Presenca = 2;
 
             float frequencia = aluno.ConsultarFrequenciaEmDisciplina(inscricao.Id);
 
-            Assert.True(frequencia == 0.2f);
+            Assert.True(frequencia == 0.0f);
         }
         
         
@@ -164,22 +176,26 @@ namespace Sistema.Aluno.Test.Domain
         {
             domain.Aluno aluno = new domain.Aluno()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Jorge",
                 Matricula = "1"
             };
 
             domain.Professor professor = new domain.Professor()
             {
+                Id = Guid.NewGuid(),
                 Matricula = "1",
             };
 
             domain.Disciplina disciplina = new domain.Disciplina()
             {
+                Id = Guid.NewGuid(),
                 Nome = "Fisica",
             };
 
             domain.Turma turma = new domain.Turma()
             {
+                Id = Guid.NewGuid(),
                 Disciplina = disciplina,
                 Professor = professor,
             };

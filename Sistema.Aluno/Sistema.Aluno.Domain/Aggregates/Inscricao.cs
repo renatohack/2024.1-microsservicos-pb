@@ -8,14 +8,14 @@ namespace Sistema.Aluno.Domain.Aggregates
 {
     public class Inscricao
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public Turma Turma { get; set; }
-        public Aluno Aluno { get; set; }
+        public Guid Id { get; init; }
+        public Turma Turma { get; init; }
+        public Aluno Aluno { get; init; }
         public bool Ativa { get; set; } = true;
-        public int Presenca { get; set; } = 0;
-        public float NotaP1 { get; set; } = 0;
-        public float NotaP2 { get; set; } = 0;
-        public float NotaPF { get; set; } = 0;
+        public int Presenca { get; init; } = 0;
+        public float NotaP1 { get; init; } = 0;
+        public float NotaP2 { get; init; } = 0;
+        public float NotaPF { get; init; } = 0;
 
 
         // public methods
