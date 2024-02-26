@@ -18,18 +18,7 @@ namespace Sistema.Aluno.Domain.Aggregates
        
 
         // public methods
-        public static Aluno CriarAluno(string nome, string matricula)
-        {
-            Aluno aluno = new Aluno()
-            {
-                Nome = nome,
-                Matricula = matricula
-            };
-
-            return aluno;
-        }
-
-        public Inscricao RealizarInscricao(Turma turma)
+        public void RealizarInscricao(Turma turma)
         {
             Inscricao inscricao = new Inscricao()
             {
@@ -39,8 +28,6 @@ namespace Sistema.Aluno.Domain.Aggregates
 
             this.Inscricoes.Add(inscricao);
             turma.Inscricoes.Add(inscricao);
-
-            return inscricao;
         }
 
         public void CancelarInscricao(Guid idInscricao)
@@ -61,22 +48,6 @@ namespace Sistema.Aluno.Domain.Aggregates
         public List<Inscricao> ConsultarHistorico()
         {
             return this.Inscricoes;
-        }
-
-        public void AlterarNotasDeDisciplina(Guid idInscricao, float notap1, float notap2, float notapf)
-        {
-            Inscricao inscricao = this.Inscricoes.FirstOrDefault(inscricao => inscricao.Id == idInscricao);
-
-            inscricao.NotaP1 = notap1;
-            inscricao.NotaP2 = notap2;
-            inscricao.NotaPF = notapf;
-        }
-
-        public void AlterarPresencaEmDisciplina(Guid idInscricao, int presenca)
-        {
-            Inscricao inscricao = this.Inscricoes.FirstOrDefault(inscricao => inscricao.Id == idInscricao);
-
-            inscricao.Presenca = presenca;
         }
 
     }
