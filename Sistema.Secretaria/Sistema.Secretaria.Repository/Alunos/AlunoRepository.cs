@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using Npgsql;
 using Sistema.Secretaria.Application.Alunos.Response;
-using Sistema.Secretaria.Domain.Aggregates;
 
 namespace Sistema.Secretaria.Repository.Alunos;
 public class AlunoRepository
@@ -48,13 +47,18 @@ public class AlunoRepository
                                        });
     }
 
-    public async Task<IEnumerable<Inscricao>> ConsultarHistorico(Guid idAluno)
+    public async Task<IEnumerable<ConsultarHistoricoResponse>> ConsultarHistorico(Guid idAluno)
     {
-        var query = @"SELECT *
+        var query = @"SELECT ativa, 
+                             presenca, 
+                             nota_p1, 
+                             nota_p2, 
+                             nota_pf,
+                             turma_id
                       FROM Inscricoes 
                       WHERE aluno_id = @IdAluno;";
 
-        return await _connection.QueryAsync<Inscricao>(query,
+        return await _connection.QueryAsync<ConsultarHistoricoResponse>(query,
                                        new
                                        {
                                            IdAluno = idAluno

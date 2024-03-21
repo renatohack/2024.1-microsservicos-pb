@@ -22,7 +22,7 @@ public class AlunoService
         await Repository.CancelarInscricao(idInscricao);
     }
 
-    public async Task<IEnumerable<Inscricao>> ConsultarHistorico(Guid idAluno)
+    public async Task<IEnumerable<ConsultarHistoricoResponse>> ConsultarHistorico(Guid idAluno)
     {
         return await Repository.ConsultarHistorico(idAluno);
     }
