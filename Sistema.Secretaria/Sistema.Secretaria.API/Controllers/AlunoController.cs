@@ -16,10 +16,42 @@ public class AlunoController : ControllerBase
     }
 
     [HttpPost("{idAluno}/realizarInscricao")]
-    public IActionResult RealizarInscricao([FromRoute] Guid idAluno, [FromBody] RealizarInscricaoRequest request)
+    public async Task<IActionResult> RealizarInscricao([FromRoute] Guid idAluno, [FromBody] RealizarInscricaoRequest request)
     {
-        Service.RealizarInscricao(idAluno, request.IdTurma);
+        await Service.RealizarInscricao(idAluno, request.IdTurma);
 
-        return Ok();
+        return NoContent();
+    }
+
+    [HttpPatch("cancelarInscricao")]
+    public async Task<IActionResult> CancelarInscricao([FromBody] CancelarInscricaoRequest request)
+    {
+        await Service.CancelarInscricao(request.IdInscricao);
+
+        return NoContent();
+    }
+
+    [HttpGet("{idAluno}/consultarHistorico")]
+    public async Task<IActionResult> ConsultarHistorico([FromRoute] Guid idAluno)
+    {
+        var historico = await Service.ConsultarHistorico(idAluno);
+
+        return Ok(historico);
+    }
+
+    [HttpGet("{idAluno}/consultarFrequencia/{idInscricao}")]
+    public async Task<IActionResult> ConsultarFrequencia([FromRoute] Guid idAluno, [FromRoute] Guid idInscricao)
+    {
+        var historico = await Service.ConsultarFrequencia(idAluno, idInscricao);
+
+        return Ok(historico);
+    }
+
+    [HttpGet("{idAluno}/consultarNotas/{idInscricao}")]
+    public async Task<IActionResult> ConsultarNotas([FromRoute] Guid idAluno, [FromRoute] Guid idInscricao)
+    {
+        var notas = await Service.ConsultarNotas(idAluno, idInscricao);
+
+        return Ok(notas);
     }
 }
