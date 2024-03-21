@@ -46,9 +46,9 @@
         //    return this.Inscricoes.FirstOrDefault(inscricao => inscricao.Id == idInscricao).ObterNotas();
         //}
 
-        ////public float ConsultarFrequenciaEmDisciplina(Guid idInscricao)
+        ////public float ConsultarPresencaEmDisciplina(Guid idInscricao)
         ////{
-        ////    return this.Inscricoes.FirstOrDefault(inscricao => inscricao.Id == idInscricao).ObterFrequencia();
+        ////    return this.Inscricoes.FirstOrDefault(inscricao => inscricao.Id == idInscricao).ObterPresenca();
         ////}
 
         //public List<Inscricao> ConsultarHistorico()

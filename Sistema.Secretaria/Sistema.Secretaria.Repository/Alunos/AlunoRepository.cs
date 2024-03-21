@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Npgsql;
 using Sistema.Secretaria.Application.Alunos.Response;
+using Sistema.Secretaria.Application.Comuns;
 
 namespace Sistema.Secretaria.Repository.Alunos;
 public class AlunoRepository
@@ -65,7 +66,7 @@ public class AlunoRepository
                                        });
     }
 
-    public async Task<int> ConsultarFrequencia(Guid idAluno, Guid idInscricao)
+    public async Task<int> ConsultarPresenca(Guid idAluno, Guid idInscricao)
     {
         var query = @"SELECT presenca
                       FROM Inscricoes 
@@ -82,7 +83,9 @@ public class AlunoRepository
 
     public async Task<IEnumerable<ConsultarNotasResponse>> ConsultarNotas(Guid idAluno, Guid idInscricao)
     {
-        var query = @"SELECT presenca
+        var query = @"SELECT nota_p1, 
+                             nota_p2, 
+                             nota_pf
                       FROM Inscricoes 
                       WHERE inscricao_id = @IdInscricao
                       AND aluno_id = @IdAluno";

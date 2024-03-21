@@ -39,12 +39,12 @@ public class AlunoController : ControllerBase
         return Ok(historico);
     }
 
-    [HttpGet("{idAluno}/consultarFrequencia/{idInscricao}")]
-    public async Task<IActionResult> ConsultarFrequencia([FromRoute] Guid idAluno, [FromRoute] Guid idInscricao)
+    [HttpGet("{idAluno}/consultarPresenca/{idInscricao}")]
+    public async Task<IActionResult> ConsultarPresenca([FromRoute] Guid idAluno, [FromRoute] Guid idInscricao)
     {
-        var historico = await Service.ConsultarFrequencia(idAluno, idInscricao);
+        var presenca = await Service.ConsultarPresenca(idAluno, idInscricao);
 
-        return Ok(historico);
+        return Ok(new { Presenca = presenca });
     }
 
     [HttpGet("{idAluno}/consultarNotas/{idInscricao}")]

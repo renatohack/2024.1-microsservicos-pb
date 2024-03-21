@@ -26,7 +26,7 @@
             return new List<float>() { this.NotaP1, this.NotaP2, this.NotaPF };
         }
 
-        //public float ObterFrequencia()
+        //public float ObterPresenca()
         //{
         //    return (float) this.Presenca / this.Turma.NumeroAulas;
         //}

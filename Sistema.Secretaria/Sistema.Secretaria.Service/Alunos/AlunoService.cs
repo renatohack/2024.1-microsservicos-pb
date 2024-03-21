@@ -1,5 +1,5 @@
 ﻿using Sistema.Secretaria.Application.Alunos.Response;
-using Sistema.Secretaria.Domain.Aggregates;
+using Sistema.Secretaria.Application.Comuns;
 using Sistema.Secretaria.Repository.Alunos;
 
 namespace Sistema.Secretaria.Service.Alunos;
@@ -27,9 +27,9 @@ public class AlunoService
         return await Repository.ConsultarHistorico(idAluno);
     }
 
-    public async Task<int> ConsultarFrequencia(Guid idAluno, Guid idInscricao)
+    public async Task<int> ConsultarPresenca(Guid idAluno, Guid idInscricao)
     {
-        return await Repository.ConsultarFrequencia(idAluno, idInscricao);
+        return await Repository.ConsultarPresenca(idAluno, idInscricao);
     }
 
     public async Task<IEnumerable<ConsultarNotasResponse>> ConsultarNotas(Guid idAluno, Guid idInscricao)

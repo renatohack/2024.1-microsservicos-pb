@@ -222,7 +222,7 @@
 
 
 //        [Fact]
-//        public void DeveAlterarFrequenciaComSucesso()
+//        public void DeveAlterarPresencaComSucesso()
 //        {
 //            domain.Aluno aluno = new domain.Aluno()
 //            {
@@ -249,17 +249,17 @@
 
 //            domain.Inscricao inscricao = aluno.RealizarInscricao(turma);
 
-//            //Assert.True(inscricao.ObterFrequencia() == 0 && inscricao.Presenca == 0);
+//            //Assert.True(inscricao.ObterPresenca() == 0 && inscricao.Presenca == 0);
 
 //            aluno.AlterarPresencaEmDisciplina(inscricao.Id, 2);
 
-//            //Assert.True(inscricao.ObterFrequencia() == 0.2f);
+//            //Assert.True(inscricao.ObterPresenca() == 0.2f);
 //            Assert.True(inscricao.Presenca == 2);
 //        }
 
 
 //        [Fact]
-//        public void DeveConsultarFrequenciaComSucesso()
+//        public void DeveConsultarPresencaComSucesso()
 //        {
 //            domain.Aluno aluno = new domain.Aluno()
 //            {
@@ -287,9 +287,9 @@
 //            domain.Inscricao inscricao = aluno.RealizarInscricao(turma);
 
 //            aluno.AlterarPresencaEmDisciplina(inscricao.Id, 2);
-//            //float frequencia = aluno.ConsultarFrequenciaEmDisciplina(inscricao.Id);
+//            //float Presenca = aluno.ConsultarPresencaEmDisciplina(inscricao.Id);
 
-//            //Assert.True(frequencia == 0.2f);
+//            //Assert.True(Presenca == 0.2f);
 //        }
 //    }
 //}
