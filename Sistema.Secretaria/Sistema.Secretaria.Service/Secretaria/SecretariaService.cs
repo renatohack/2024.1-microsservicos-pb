@@ -1,4 +1,5 @@
-﻿using Sistema.Secretaria.Repository.Secretaria;
+﻿using Sistema.Secretaria.Domain.Aggregates;
+using Sistema.Secretaria.Repository.Secretarias;
 
 namespace Sistema.Secretaria.Service.Secretaria;
 public class SecretariaService
@@ -13,5 +14,12 @@ public class SecretariaService
     public void CriarAluno(string nome)
     {
         Repository.CriarAluno(nome);
+    }
+
+    public async Task<Aluno> ObterAluno(Guid id)
+    {
+        var aluno = await Repository.ObterAluno(id);
+
+        return aluno;
     }
 }

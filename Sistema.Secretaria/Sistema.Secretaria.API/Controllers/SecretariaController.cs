@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sistema.Secretaria.Application.Secretaria.Requests;
 using Sistema.Secretaria.Service.Secretaria;
 
 namespace Sistema.Secretaria.API.Controllers;
@@ -15,15 +16,18 @@ public class SecretariaController : ControllerBase
     }
 
     [HttpPost("criarAluno")]
-    public IActionResult CriarAluno(AlunoReqeust reqeust)
+    public IActionResult CriarAluno([FromBody] CriarAlunoRequest request)
     {
-        Service.CriarAluno(reqeust.Nome);
+        Service.CriarAluno(request.Nome);
 
         return Ok();
     }
-}
 
-public class AlunoReqeust
-{
-    public string Nome { get; set; }
+    [HttpGet("obterAluno/{id}")]
+    public async Task<IActionResult> ObterAluno([FromRoute] Guid id)
+    {
+        var aluno = await Service.ObterAluno(id);
+
+        return Ok(aluno);
+    }
 }

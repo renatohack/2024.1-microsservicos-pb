@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sistema.Secretaria.Domain.Aggregates
+﻿namespace Sistema.Secretaria.Domain.Aggregates
 {
     public class Inscricao
     {
@@ -30,10 +24,10 @@ namespace Sistema.Secretaria.Domain.Aggregates
             return new List<float>() { this.NotaP1, this.NotaP2, this.NotaPF };
         }
 
-        public float ObterFrequencia()
-        {
-            return (float) this.Presenca / this.Turma.NumeroAulas;
-        }
+        //public float ObterFrequencia()
+        //{
+        //    return (float) this.Presenca / this.Turma.NumeroAulas;
+        //}
 
 
 
