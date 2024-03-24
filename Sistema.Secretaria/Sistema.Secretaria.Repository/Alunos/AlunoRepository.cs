@@ -16,19 +16,14 @@ public class AlunoRepository
     public async Task RealizarInscricao(Guid idAluno, Guid idTurma)
     {
         var query = @"INSERT INTO Inscricoes 
-                    (inscricao_id, ativa, presenca, nota_p1, nota_p2, nota_pf, aluno_id, turma_id)
+                    (inscricao_id, aluno_id, turma_id)
                     VALUES 
-                    (@Id, @Ativa, @Presenca, @NotaP1, @NotaP2, @NotaPF, @IdAluno, @IdTurma);";
+                    (@Id, @IdAluno, @IdTurma);";
 
         await _connection.ExecuteAsync(query,
                                        new
                                        {
                                            Id = Guid.NewGuid(),
-                                           Ativa = true,
-                                           Presenca = 0,
-                                           NotaP1 = 0,
-                                           NotaP2 = 0,
-                                           NotaPF = 0,
                                            IdAluno = idAluno,
                                            IdTurma = idTurma
                                        });
@@ -73,7 +68,7 @@ public class AlunoRepository
                       WHERE inscricao_id = @IdInscricao
                       AND aluno_id = @IdAluno";
 
-        return await _connection.QueryFirstAsync<int>(query,
+        return await _connection.QueryFirstOrDefaultAsync<int>(query,
                                        new
                                        {
                                            IdInscricao = idInscricao,
@@ -95,6 +90,34 @@ public class AlunoRepository
                                        {
                                            IdInscricao = idInscricao,
                                            IdAluno = idAluno
+                                       });
+    }
+
+    public async Task<Guid> ConsultarInscricao(Guid idAluno, Guid idTurma)
+    {
+        var query = @"SELECT inscricao_id
+                      FROM Inscricoes 
+                      WHERE turma_id = @IdTurma
+                      AND aluno_id = @IdAluno";
+
+        return await _connection.QueryFirstOrDefaultAsync<Guid>(query,
+                                       new
+                                       {
+                                           IdTurma = idTurma,
+                                           IdAluno = idAluno
+                                       });
+    }
+
+    public async Task<Guid> ConsultaTurma(Guid idTurma)
+    {
+        var query = @"SELECT turma_id
+                      FROM Turmas 
+                      WHERE turma_id = @IdTurma";
+
+        return await _connection.QueryFirstOrDefaultAsync<Guid>(query,
+                                       new
+                                       {
+                                           IdTurma = idTurma
                                        });
     }
 }

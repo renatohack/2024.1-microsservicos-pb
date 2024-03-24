@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using Npgsql;
-using Sistema.Secretaria.Domain.Aggregates;
+using Sistema.Secretaria.Application.Secretaria.Response;
 
 namespace Sistema.Secretaria.Repository.Secretarias;
 public class SecretariaRepository
@@ -18,16 +18,26 @@ public class SecretariaRepository
                       (aluno_id, nome)
                       VALUES (@Id, @Nome)";
 
-        await _connection.ExecuteAsync(query, new { Id = Guid.NewGuid(), Nome = nome });
+       await _connection.ExecuteAsync(query, new { Id = Guid.NewGuid(), Nome = nome });
     }
 
-    public async Task<Aluno> ObterAluno(Guid id)
+    public async Task<ObterAlunoResponse> ObterAluno(Guid id)
     {
-        var query = @"SELECT * FROM Alunos
-                      WHERE aluno_id = @IdAluno";
+        var queries = @"SELECT i.inscricao_id FROM Inscricoes i
+                      WHERE i.aluno_id = @IdAluno;
+                      
+                      SELECT aluno_id, nome, matricula FROM Alunos
+                      WHERE aluno_id = @IdAluno;";
 
-        var aluno = await _connection.QueryFirstAsync<Aluno>(query, new { IdAluno = id });
+        using (var multi = await _connection.QueryMultipleAsync(queries, new { IdAluno = id }))
+        {
+            var inscrioes = await multi.ReadAsync<Guid>();
 
-        return aluno;
+            var aluno = await multi.ReadFirstAsync<ObterAlunoResponse>();
+
+            aluno.Inscricoes = inscrioes;
+
+            return aluno;
+        };
     }
 }

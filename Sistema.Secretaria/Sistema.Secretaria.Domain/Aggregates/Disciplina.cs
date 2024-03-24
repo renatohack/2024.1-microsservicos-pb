@@ -2,10 +2,9 @@
 {
     public class Disciplina
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
         public string Nome { get; set; }
-        public List<Turma> Turmas { get; set; } = new List<Turma>();
-        public int NumeroAulas { get; set; } = 1;
-
+        public List<Turma> Turmas { get; set; }
+        public int NumeroAulas { get; set; } 
     }
 }

@@ -12,6 +12,12 @@ public class AlunoService
         Repository = new AlunoRepository();
     }
 
+    public async Task<Guid> ConsultarInscricao(Guid idAluno, Guid idTurma)
+    {
+        return await Repository.ConsultarInscricao(idAluno, idTurma);
+    }
+
+
     public async Task RealizarInscricao(Guid idAluno, Guid idTurma)
     {
         await Repository.RealizarInscricao(idAluno, idTurma);
@@ -35,5 +41,10 @@ public class AlunoService
     public async Task<IEnumerable<ConsultarNotasResponse>> ConsultarNotas(Guid idAluno, Guid idInscricao)
     {
         return await Repository.ConsultarNotas(idAluno, idInscricao);
+    }
+
+    public async Task<Guid> ConsultarTurma(Guid idTurma)
+    {
+        return await Repository.ConsultaTurma(idTurma);
     }
 }

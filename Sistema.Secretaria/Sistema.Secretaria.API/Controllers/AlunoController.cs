@@ -18,6 +18,20 @@ public class AlunoController : ControllerBase
     [HttpPost("{idAluno}/realizarInscricao")]
     public async Task<IActionResult> RealizarInscricao([FromRoute] Guid idAluno, [FromBody] RealizarInscricaoRequest request)
     {
+        var turma = await Service.ConsultarTurma(request.IdTurma);
+
+        if (turma == default)
+        {
+            return BadRequest("Turma inserida não existe!");
+        }
+
+        var inscricao = await Service.ConsultarInscricao(idAluno, request.IdTurma);
+
+        if (inscricao != default)
+        {
+            return BadRequest("Aluno já cadastrado na turma!");
+        }
+
         await Service.RealizarInscricao(idAluno, request.IdTurma);
 
         return NoContent();

@@ -1,4 +1,4 @@
-﻿using Sistema.Secretaria.Domain.Aggregates;
+﻿using Sistema.Secretaria.Application.Secretaria.Response;
 using Sistema.Secretaria.Repository.Secretarias;
 
 namespace Sistema.Secretaria.Service.Secretaria;
@@ -16,7 +16,7 @@ public class SecretariaService
         Repository.CriarAluno(nome);
     }
 
-    public async Task<Aluno> ObterAluno(Guid id)
+    public async Task<ObterAlunoResponse> ObterAluno(Guid id)
     {
         var aluno = await Repository.ObterAluno(id);
 
