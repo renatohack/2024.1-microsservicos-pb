@@ -6,7 +6,7 @@ docker image rm renatonhack/pb-db
 -----------------------------------------------------------------------------------------------
 
 EXPORT DB
-pg_dump -U postgres -d projeto_bloco -Fc -f projeto_bloco_db.sql
+pg_dump -U postgres -d projeto_bloco -Fp -f projeto_bloco_db.sql
 (password: 123456)
 
 -----------------------------------------------------------------------------------------------
