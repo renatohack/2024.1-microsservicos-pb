@@ -45,7 +45,7 @@ namespace Sistema.Aluno.Repository
             var responseModel = new ResponseModel()
             {
                 StatusCode = (int)response.StatusCode,
-                Message = response.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+                Message = await response.Content.ReadAsStringAsync()
             };
 
             return (responseModel);
@@ -73,7 +73,7 @@ namespace Sistema.Aluno.Repository
 
             var response = await HttpClient.SendAsync(requestHttp);
 
-            var jsonResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            var jsonResponse = await response.Content.ReadAsStringAsync();
 
             var historico = JsonSerializer.Deserialize<IEnumerable<ConsultarHistoricoResponse>>(jsonResponse);
 
