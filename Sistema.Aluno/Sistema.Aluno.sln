@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.API", "Sistem
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.Test", "Sistema.Aluno.Test\Sistema.Aluno.Test.csproj", "{4181BD48-6F8D-4146-AB16-0F435082E8D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Application", "Sistema.Aluno.Application\Sistema.Aluno.Application.csproj", "{12BD05C0-55BE-4DB0-B4D6-BF5915468B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Aluno.Application", "Sistema.Aluno.Application\Sistema.Aluno.Application.csproj", "{12BD05C0-55BE-4DB0-B4D6-BF5915468B30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Aluno.Core", "Sistema.Aluno.Core\Sistema.Aluno.Core.csproj", "{44F623C6-F713-4E67-8883-0B4A9377CCFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{12BD05C0-55BE-4DB0-B4D6-BF5915468B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12BD05C0-55BE-4DB0-B4D6-BF5915468B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12BD05C0-55BE-4DB0-B4D6-BF5915468B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F623C6-F713-4E67-8883-0B4A9377CCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F623C6-F713-4E67-8883-0B4A9377CCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F623C6-F713-4E67-8883-0B4A9377CCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F623C6-F713-4E67-8883-0B4A9377CCFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

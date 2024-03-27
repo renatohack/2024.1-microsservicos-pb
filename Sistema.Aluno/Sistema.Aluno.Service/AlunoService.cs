@@ -1,4 +1,5 @@
 ﻿using Sistema.Aluno.Application;
+using Sistema.Aluno.Core;
 using Sistema.Aluno.Repository;
 
 namespace Sistema.Aluno.Service
@@ -12,9 +13,9 @@ namespace Sistema.Aluno.Service
             Repository = new AlunoRepository();
         }
 
-        public async Task RealizarInscricao(Guid idAluno, RealizarInscricaoRequest request)
+        public async Task<ResponseModel> RealizarInscricao(Guid idAluno, RealizarInscricaoRequest request)
         {
-            await Repository.RealizarInscricao(idAluno, request);
+            return await Repository.RealizarInscricao(idAluno, request);
         }
     }
 }

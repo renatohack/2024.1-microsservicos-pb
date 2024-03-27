@@ -1,8 +1,10 @@
 ﻿using Sistema.Aluno.Application;
+using Sistema.Aluno.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -24,7 +26,7 @@ namespace Sistema.Aluno.Repository
             this.HttpClient = new HttpClient();
         }
 
-        public async Task RealizarInscricao(Guid idAluno, RealizarInscricaoRequest request)
+        public async Task<ResponseModel> RealizarInscricao(Guid idAluno, RealizarInscricaoRequest request)
         {
 
             var jsonRequest = JsonSerializer.Serialize(request);
@@ -37,6 +39,14 @@ namespace Sistema.Aluno.Repository
             };
 
             var response = await HttpClient.SendAsync(requestHttp);
+
+            var responseModel = new ResponseModel()
+            {
+                StatusCode = (int)response.StatusCode,
+                Message = response.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+            };
+
+            return (responseModel);
         }
     }
 }

@@ -22,9 +22,20 @@ namespace Sistema.Aluno.API.Controllers
         [HttpPost("{idAluno}/realizarInscricao")]
         public async Task<IActionResult> RealizarInscricao([FromRoute] Guid idAluno, [FromBody] RealizarInscricaoRequest request)
         {
-            await Service.RealizarInscricao(idAluno, request);
+            var response = await Service.RealizarInscricao(idAluno, request);
 
-            return NoContent();
+            if (response.StatusCode == 204){
+
+                return NoContent();
+            } 
+            
+            else {
+
+                return BadRequest(response.Message);
+
+            }
+
+            
         }
 
 
