@@ -94,5 +94,20 @@ namespace Sistema.Aluno.Repository
 
             return presenca.presenca;
         }
+
+        public async Task<IEnumerable<ConsultarNotasResponse>> ConsultarNotas(Guid idAluno, Guid idInscricao)
+        {
+            var url = $"https://localhost:7064/api/Aluno/{idAluno}/consultarNotas/{idInscricao}";
+
+            var requestHttp = new HttpRequestMessage(HttpMethod.Get, url);
+
+            var response = await HttpClient.SendAsync(requestHttp);
+
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            var notas = JsonSerializer.Deserialize<IEnumerable<ConsultarNotasResponse>>(jsonResponse);
+
+            return notas;
+        }
     }
 }

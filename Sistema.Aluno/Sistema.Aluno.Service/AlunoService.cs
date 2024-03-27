@@ -32,5 +32,10 @@ namespace Sistema.Aluno.Service
         {
             return await Repository.ConsultarPresenca(idAluno, idInscricao);
         }
+
+        public async Task<IEnumerable<ConsultarNotasResponse>> ConsultarNotas(Guid idAluno, Guid idInscricao)
+        {
+            return await Repository.ConsultarNotas(idAluno, idInscricao);
+        }
     }
 }
