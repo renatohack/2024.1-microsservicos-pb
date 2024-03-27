@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Sistema.Professor.Repository\Sistema.Professor.Repository.csproj" />
-  </ItemGroup>
-
 </Project>

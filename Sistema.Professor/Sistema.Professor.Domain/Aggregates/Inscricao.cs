@@ -32,7 +32,7 @@ namespace Sistema.Professor.Domain.Aggregates
 
         public float ObterFrequencia()
         {
-            return (float) this.Presenca / this.Turma.NumeroAulas;
+            return (float) this.Presenca / this.Turma.Disciplina.NumeroAulas;
         }
 
 
