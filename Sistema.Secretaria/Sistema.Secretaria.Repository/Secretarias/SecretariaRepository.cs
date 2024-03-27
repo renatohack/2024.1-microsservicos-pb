@@ -12,7 +12,7 @@ public class SecretariaRepository
         _connection = new NpgsqlConnection(@"HOST=localhost:5432;DataBase=projeto_bloco;UserName=postgres;Password=123456;");
     }
 
-    public async void CriarAluno(string nome)
+    public async Task CriarAluno(string nome)
     {
         var query = @"INSERT INTO Alunos
                       (aluno_id, nome)

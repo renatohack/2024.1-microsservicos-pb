@@ -16,9 +16,9 @@ public class SecretariaController : ControllerBase
     }
 
     [HttpPost("criarAluno")]
-    public IActionResult CriarAluno([FromBody] CriarAlunoRequest request)
+    public async Task<IActionResult> CriarAluno([FromBody] CriarAlunoRequest request)
     {
-        Service.CriarAluno(request.Nome);
+        await Service.CriarAluno(request.Nome);
 
         return Ok();
     }

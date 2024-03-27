@@ -11,9 +11,9 @@ public class SecretariaService
         Repository = new SecretariaRepository();
     }
 
-    public void CriarAluno(string nome)
+    public async Task CriarAluno(string nome)
     {
-        Repository.CriarAluno(nome);
+        await Repository.CriarAluno(nome);
     }
 
     public async Task<ObterAlunoResponse> ObterAluno(Guid id)
