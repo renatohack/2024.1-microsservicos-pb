@@ -243,8 +243,7 @@ namespace Sistema.Professor.Test.Domain
             domain.Turma turma = new domain.Turma()
             {
                 Disciplina = disciplina,
-                Professor = professor,
-                NumeroAulas = 10,
+                Professor = professor
             };
 
             domain.Inscricao inscricao = aluno.RealizarInscricao(turma);
@@ -280,8 +279,7 @@ namespace Sistema.Professor.Test.Domain
             domain.Turma turma = new domain.Turma()
             {
                 Disciplina = disciplina,
-                Professor = professor,
-                NumeroAulas = 10,
+                Professor = professor
             };
 
             domain.Inscricao inscricao = aluno.RealizarInscricao(turma);

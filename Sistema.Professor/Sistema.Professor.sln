@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Professor.Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Professor.Service", "Sistema.Professor.Service\Sistema.Professor.Service.csproj", "{C33FC612-2B80-4C46-A263-4E94031391C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Professor.Test", "Sistema.Professor.Test\Sistema.Professor.Test.csproj", "{59049E3D-EEAA-43FF-94D0-63F03A2AF952}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Professor.Test", "Sistema.Professor.Test\Sistema.Professor.Test.csproj", "{59049E3D-EEAA-43FF-94D0-63F03A2AF952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Professor.Applicatrion", "Sistema.Professor.Applicatrion\Sistema.Professor.Applicatrion.csproj", "{F530ECB0-FA48-47DC-A748-8B04781BDFFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{59049E3D-EEAA-43FF-94D0-63F03A2AF952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59049E3D-EEAA-43FF-94D0-63F03A2AF952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59049E3D-EEAA-43FF-94D0-63F03A2AF952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F530ECB0-FA48-47DC-A748-8B04781BDFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F530ECB0-FA48-47DC-A748-8B04781BDFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F530ECB0-FA48-47DC-A748-8B04781BDFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F530ECB0-FA48-47DC-A748-8B04781BDFFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
