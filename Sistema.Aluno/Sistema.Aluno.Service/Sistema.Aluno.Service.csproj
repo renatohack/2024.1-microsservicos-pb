@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\" />
+    <ProjectReference Include="..\Sistema.Aluno.Application\Sistema.Aluno.Application.csproj" />
+    <ProjectReference Include="..\Sistema.Aluno.Domain\Sistema.Aluno.Domain.csproj" />
+    <ProjectReference Include="..\Sistema.Aluno.Repository\Sistema.Aluno.Repository.csproj" />
   </ItemGroup>
 
 </Project>

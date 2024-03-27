@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Sistema.Aluno.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using domain = Sistema.Aluno.Domain.Aggregates;
 
@@ -9,26 +12,31 @@ namespace Sistema.Aluno.Repository
 {
     public class AlunoRepository
     {
-        private static List<domain.Aluno> _Alunos = new List<domain.Aluno>();
+        private HttpClient HttpClient { get; set; }
 
-        public void SalvarAlunoNaBase(domain.Aluno Aluno)
+        JsonSerializerOptions options = new JsonSerializerOptions
         {
+            PropertyNameCaseInsensitive = true
+        };
 
-            domain.Aluno AlunoBanco = this.ObterAlunoPorId(Aluno.Id);
-
-            if (AlunoBanco == null)
-            {
-                AlunoRepository._Alunos.Add(Aluno);
-            }
-            else
-            {
-                int indexToUpdate = AlunoRepository._Alunos.FindIndex(a => a.Id.Equals(Aluno.Id));
-                AlunoRepository._Alunos[indexToUpdate] = Aluno;
-            }
-
+        public AlunoRepository()
+        {
+            this.HttpClient = new HttpClient();
         }
 
+        public async Task RealizarInscricao(Guid idAluno, RealizarInscricaoRequest request)
+        {
 
-        public domain.Aluno ObterAlunoPorId(Guid idAluno) => AlunoRepository._Alunos.FirstOrDefault(Aluno => Aluno.Id == idAluno);
+            var jsonRequest = JsonSerializer.Serialize(request);
+
+            var url = $"https://localhost:7064/api/Aluno/{idAluno}/realizarInscricao";
+
+            var requestHttp = new HttpRequestMessage(HttpMethod.Post, url)
+            {
+                Content = new StringContent(jsonRequest, Encoding.UTF8, "application/json")
+            };
+
+            var response = await HttpClient.SendAsync(requestHttp);
+        }
     }
 }

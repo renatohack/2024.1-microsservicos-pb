@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Aluno.Application\Sistema.Aluno.Application.csproj" />
+    <ProjectReference Include="..\Sistema.Aluno.Service\Sistema.Aluno.Service.csproj" />
+  </ItemGroup>
+
 </Project>
