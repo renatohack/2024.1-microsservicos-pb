@@ -17,5 +17,10 @@ namespace Sistema.Aluno.Service
         {
             return await Repository.RealizarInscricao(idAluno, request);
         }
+
+        public async Task CancelarInscricao(CancelarInscricaoRequest request)
+        {
+            await Repository.CancelarInscricao(request);
+        }
     }
 }

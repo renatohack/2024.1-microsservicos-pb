@@ -39,5 +39,14 @@ namespace Sistema.Aluno.API.Controllers
         }
 
 
+
+        [HttpPatch("cancelarInscricao")]
+        public async Task<IActionResult> CancelarInscricao([FromBody] CancelarInscricaoRequest request)
+        {
+            await Service.CancelarInscricao(request);
+
+            return NoContent();
+        }
+
     }
 }
