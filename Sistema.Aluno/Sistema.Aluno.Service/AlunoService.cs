@@ -27,5 +27,10 @@ namespace Sistema.Aluno.Service
         {
             return await Repository.ConsultarHistorico(idAluno);
         }
+
+        public async Task<int> ConsultarPresenca(Guid idAluno, Guid idInscricao)
+        {
+            return await Repository.ConsultarPresenca(idAluno, idInscricao);
+        }
     }
 }

@@ -79,5 +79,20 @@ namespace Sistema.Aluno.Repository
 
             return historico;
         }
+
+        public async Task<int> ConsultarPresenca(Guid idAluno, Guid idInscricao)
+        {
+            var url = $"https://localhost:7064/api/Aluno/{idAluno}/consultarPresenca/{idInscricao}";
+
+            var requestHttp = new HttpRequestMessage(HttpMethod.Get, url);
+
+            var response = await HttpClient.SendAsync(requestHttp);
+
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            var presenca = JsonSerializer.Deserialize<ConsultarPresencaResponse>(jsonResponse);
+
+            return presenca.presenca;
+        }
     }
 }

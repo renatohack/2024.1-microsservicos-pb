@@ -58,5 +58,14 @@ namespace Sistema.Aluno.API.Controllers
             return Ok(historico);
         }
 
+
+
+        [HttpGet("{idAluno}/consultarPresenca/{idInscricao}")]
+        public async Task<IActionResult> ConsultarPresenca([FromRoute] Guid idAluno, [FromRoute] Guid idInscricao)
+        {
+            var presenca = await Service.ConsultarPresenca(idAluno, idInscricao);
+
+            return Ok(new { Presenca = presenca });
+        }
     }
 }
