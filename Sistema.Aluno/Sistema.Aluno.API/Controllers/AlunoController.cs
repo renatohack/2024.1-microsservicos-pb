@@ -48,5 +48,15 @@ namespace Sistema.Aluno.API.Controllers
             return NoContent();
         }
 
+
+
+        [HttpGet("{idAluno}/consultarHistorico")]
+        public async Task<IActionResult> ConsultarHistorico([FromRoute] Guid idAluno)
+        {
+            var historico = await Service.ConsultarHistorico(idAluno);
+
+            return Ok(historico);
+        }
+
     }
 }

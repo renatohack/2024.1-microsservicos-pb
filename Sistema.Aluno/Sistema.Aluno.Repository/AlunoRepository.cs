@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
@@ -62,6 +63,21 @@ namespace Sistema.Aluno.Repository
             };
 
             await HttpClient.SendAsync(requestHttp);
+        }
+
+        public async Task<IEnumerable<ConsultarHistoricoResponse>> ConsultarHistorico(Guid idAluno)
+        {
+            var url = $"https://localhost:7064/api/Aluno/{idAluno}/consultarHistorico";
+
+            var requestHttp = new HttpRequestMessage(HttpMethod.Get, url);
+
+            var response = await HttpClient.SendAsync(requestHttp);
+
+            var jsonResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+            var historico = JsonSerializer.Deserialize<IEnumerable<ConsultarHistoricoResponse>>(jsonResponse);
+
+            return historico;
         }
     }
 }

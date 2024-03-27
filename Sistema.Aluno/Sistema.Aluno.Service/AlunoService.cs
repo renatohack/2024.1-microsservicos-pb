@@ -22,5 +22,10 @@ namespace Sistema.Aluno.Service
         {
             await Repository.CancelarInscricao(request);
         }
+
+        public async Task<IEnumerable<ConsultarHistoricoResponse>> ConsultarHistorico(Guid idAluno)
+        {
+            return await Repository.ConsultarHistorico(idAluno);
+        }
     }
 }
